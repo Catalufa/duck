@@ -126,3 +126,52 @@ h1 {
 .messageButtons #yes {
   background: #8de9ba;
 }
+
+.lightbulb {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  opacity: 0.5;
+  transition: 1s;
+}
+
+.lightbulb:hover {
+  opacity: 1;
+  z-index: 2;
+}
+
+.notes {
+  z-index: 2;
+  top: 80px;
+  height: 580px;
+  max-height: 60vh;
+  width: 350px;
+  max-width: calc(100vw - 30px);
+  background-image: url("assets/background.png");
+  position: absolute;
+  right: 15px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  box-sizing: border-box;
+  overflow-y: auto;
+}
+
+.notes h3 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.notes p {
+  font-size: 1.5rem;
+  margin-left: 30px;
+  transition: 1s;
+}
+
+.notes p:before {
+  position: absolute;
+  transform: translateX(-1.7rem);
+  content: '☐';
+}

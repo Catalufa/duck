@@ -74,6 +74,9 @@ function message(duck, msg) {
 const no = document.querySelector("#no")
 no.addEventListener("click", closeMessage)
 
+const yes = document.querySelector("#yes")
+yes.addEventListener("click", saveMessage)
+
 // Handle message closing
 const msg = document.querySelector(".message");
 const msgClose = document.querySelector(".messageClose");
@@ -90,6 +93,19 @@ function closeMessage() {
     msgDuck.remove();
     msgClose.style.display = "none";
   }, 2000)
+}
+
+const notes = document.querySelector(".notes");
+
+function saveMessage() {
+  closeMessage();
+  addItem(msg.querySelector("p").innerHTML);
+}
+
+function addItem(text) {
+  const el = document.createElement("p");
+  el.innerHTML = text;
+  document.querySelector(".notes").appendChild(el);
 }
 
 // Create new duck every x milliseconds
